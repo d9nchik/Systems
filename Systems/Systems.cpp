@@ -2,10 +2,35 @@
 //
 
 #include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int a;
+	cout << "Enter decimal number: ";
+	vector<int> aVect;
+	cin >> a;
+	while (a!=0)
+	{
+		if ((a % 2) != 0) {
+			aVect.push_back(1);
+			a--;
+		}
+		else
+		{
+			aVect.push_back(0);
+		}
+		a /= 2;
+	}
+	cout << "In 2 system it will be: ";
+	while (aVect.size()!=0)
+	{
+		cout << aVect.back();
+		aVect.pop_back();
+	}
+	return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
